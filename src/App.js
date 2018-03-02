@@ -1,24 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-var card = require(`./../src/cards/r${Math.floor(Math.random() * 78)}.jpg`)
-
+import Card from './Card.js'
+var front = require('./../src/cards/blerp.jpg')
 
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: false,
+      cardNumber: null
+    }
+  }
+  click() {
+    if(!this.state.clicked) {
+      var x = Math.floor(Math.random() * 78) + 1;
+      this.setState({ 
+        clicked: true,
+        cardNumber: x
+      });
+      
+    } else {
+      this.setState({ clicked: false });
+    }
+  }
   render() {
-    // var x = 
+    
+    
     // var str = './../src/cards/r' + x +'.jpg'
-    // console.log(x)
+    
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className="cardBox">
-          <img src={card} alt="fuckyou"/>
+        <div className={this.state.clicked ? "clicked flip-container" : "flip-container"} onClick={this.click.bind(this)}>
+          <div className="flipper">
+            <div className="card front">
+              <img src={front} alt="idk"/>
+	        	</div>
+            <Card random={this.state.cardNumber}/>
+          </div>
         </div>
       </div>
     );
