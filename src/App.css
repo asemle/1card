@@ -119,6 +119,8 @@
         width: 22px;
         height: 22px;
         display: none;
+        padding: center;
+        text-align: center;
     }
 
     @media(max-width: 800px) {
@@ -133,7 +135,7 @@
             height: auto;
         }
         .flip-container {
-            width: 95vw;
+            width: 80vw;
             height: auto;
             margin: 0 auto;
         }
