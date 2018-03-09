@@ -15,7 +15,7 @@ export default class Card extends Component {
         console.log(this.props);
         return(
         <div className="card back">
-                <img src={`${images['r' + this.props.random]}?${Math.floor(Math.random() * 1000)}`} alt="fuckyou" />
+                <img key={new Date()} src={`${images['r' + this.props.random]}?${Math.floor(Math.random() * 1000)}`} alt="fuckyou" />
                 <button onClick={(event) => {event.stopPropagation(); this.props.describe()}}>?</button>
             <div id="description" className={this.props.description ? 'descappear':''}>
                 <h2>{card.title}</h2>
