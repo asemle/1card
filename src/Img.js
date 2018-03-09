@@ -4,12 +4,14 @@ import images from './images.js';
 export default class Img extends Component {
     constructor(props) {
         super(props)
-
+        
         this.state = {
-            random: this.props.random
+            random: null
         }
     }
+
     render() {
+        console.log(this.props.random)
         return (
             <img src={`${images['r' + this.props.random]}?${Math.floor(Math.random() * 1000)}`} alt="fuckyou" />
         )
