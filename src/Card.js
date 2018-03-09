@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import images from './images.js';
+
 import cards from './cards.js';
+import Img from './Img';
 
 
 export default class Card extends Component {
@@ -15,7 +16,7 @@ export default class Card extends Component {
         console.log(this.props);
         return(
         <div className="card back">
-                <img src={`${images['r' + this.props.random]}?${Math.floor(Math.random() * 1000)}`} alt="fuckyou" />
+                <Img random={this.props.random}/>
                 <button onClick={(event) => {event.stopPropagation(); this.props.describe()}}>?</button>
             <div id="description" className={this.props.description ? 'descappear':''}>
                 <h2>{card.title}</h2>
