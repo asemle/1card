@@ -10,8 +10,14 @@ class App extends Component {
     super(props);
     this.state = {
       clicked: false,
-      cardNumber: null
+      cardNumber: null,
+      description: false
     }
+  }
+  describe() {
+    this.setState({
+      description: true
+    })
   }
   click() {
     if(!this.state.clicked) {
@@ -22,7 +28,8 @@ class App extends Component {
       });
       
     } else {
-      this.setState({ clicked: false });
+      this.setState({ clicked: false,
+      description: false });
     }
   }
   render() {
@@ -37,7 +44,8 @@ class App extends Component {
             <div className="card front">
               <img src={front} alt="idk"/>
 	        	</div>
-            <Card random={this.state.cardNumber}/>
+            <Card describe={() => this.describe()}
+            description={this.state.description} random={this.state.cardNumber}/>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-    @font-face {
+        @font-face {
         font-family: arcana;
         src: url(./arcana.ttf);
     }
@@ -9,6 +9,7 @@
 
     .flip-container {
         perspective: 1000px;
+        margin: 10% auto;
     }
     /* flip the pane when hovered */
 
@@ -74,7 +75,7 @@
         height: 100%;
     }
 
-    .description {
+    #description {
         position: absolute;
         box-sizing: border-box;
         top: 90%;
@@ -91,13 +92,55 @@
         overflow-y: scroll;
     }
 
-    ::-webkit-scrollbar {
+     ::-webkit-scrollbar {
         display: none;
     }
 
-    .description:hover {
+    #description:hover {
         top: 0%;
         opacity: 1;
         border: 12px solid whitesmoke;
         border-radius: 1%;
     }
+
+    #description.descappear {
+        top: 0%;
+        opacity: 1;
+        border: 12px solid whitesmoke;
+        border-radius: 1%;
+    }
+
+    button {
+        position: absolute;
+        bottom: 13%;
+        right: 12%;
+        background-color: white;
+        border-radius: 100%;
+        width: 22px;
+        height: 22px;
+        display: none;
+    }
+
+    @media(max-width: 800px) {
+        button {
+            display: inline-block;
+        }
+    }
+
+    @media(max-width: 400px) {
+        .card {
+            width: 100%;
+            height: auto;
+        }
+        .flip-container {
+            width: 95vw;
+            height: auto;
+            margin: 0 auto;
+        }
+            .flipper {
+                width: 100%;
+            }
+            #description {
+                font-size: 25px;
+            }
+        }
