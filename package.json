@@ -2,7 +2,6 @@
   "name": "tarot1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://asemle.github.io/1card/",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "react": "^16.2.0",
